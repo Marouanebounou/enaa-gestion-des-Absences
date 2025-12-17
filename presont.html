@@ -3,198 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enaa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-        body { font-family: 'Roboto', sans-serif; }
-    </style>
+    <title>Enaa - Bootstrap Version</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <div class="flex min-h-screen">
+    <div class="d-flex min-vh-100">
 
-        <aside class="hidden lg:block w-64 bg-[#0B1736] text-white flex flex-col shrink-0">
-            <div class="h-20 flex items-center px-8">
-                <h1 class="text-4xl font-bold tracking-wide">Enaa</h1>
+        <aside class="sidebar bg-theme-sidebar text-white d-none d-lg-flex flex-column">
+            <div class="h-20 d-flex align-items-center px-4 py-4 mb-3">
+                <h1 class="fs-2 fw-bold mb-0">Enaa</h1>
             </div>
 
-            <nav class=" flex-1 mt-6">
-                <ul class="space-y-2">
-                    
+            <nav class="flex-grow-1">
+                <ul class="list-unstyled d-flex flex-column gap-2">
                     <li>
-                        <a href="#" class="flex items-center gap-4 px-6 py-3 bg-[#081026] border-l-4 border-transparent hover:bg-[#162447] transition-colors relative">
-                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 hidden"></div> 
-                            
-                            <img src="./imgs/icons8-dashboard-48.png" class="h-6 w-6 " alt="" fill="currentColor">
-                            <span class="text-lg font-medium">Tableua de bord</span>
+                        <a href="#" class="nav-link-custom active">
+                            <img src="./imgs/icons8-dashboard-48.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Tableau de bord</span>
                         </a>
                     </li>
-
                     <li>
-                        <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-[#162447] transition-colors text-gray-300 hover:text-white">
-                            <img src="./imgs/icons8-persons-30.png" class="w-6 h-6" alt="">
-                            <span class="text-lg font-medium">Étudiants</span>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-persons-30.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Étudiants</span>
                         </a>
                     </li>
-
                     <li>
-                        <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-[#162447] transition-colors text-gray-300 hover:text-white">
-                            <img src="./imgs/icons8-person-100.png" class="w-6 h-6" alt="">
-                            <span class="text-lg font-medium">Présence</span>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Présence</span>
                         </a>
                     </li>
-
                     <li>
-                        <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-[#162447] transition-colors text-gray-300 hover:text-white">
-                            <img src="./imgs/icons8-history-50.png" class="w-6 h-6" alt="">
-                            <span class="text-lg font-medium">Historique</span>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-history-50.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Historique</span>
                         </a>
                     </li>
-
                 </ul>
             </nav>
         </aside>
 
-        <div class="flex-1 flex flex-col">
+        <div class="flex-grow-1 d-flex flex-column">
             
-            <header class="h-20 bg-[#0B1736] flex items-center justify-end px-8 shadow-md">
-                <div class="flex items-center gap-3 text-white cursor-pointer hover:opacity-80">
-                    <img src="./imgs/icons8-person-100.png" class="w-6 h-6" alt="">
-                    
-                    <span class="text-xl font-medium">Marouane</span>
+            <header class="bg-theme-sidebar d-flex align-items-center justify-content-end px-4 py-3 shadow-sm" style="height: 80px;">
+                <div class="d-flex align-items-center gap-3 text-white" role="button">
+                    <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="">
+                    <span class="fs-5 fw-medium">Marouane</span>
                 </div>
             </header>
 
-            <main class="p-8 m-10 rounded-3xl bg-[#0B1736]">
-                <div class="flex justify-between items-start mb-6">
+            <main class="m-4 m-lg-5 p-4 p-lg-5 bg-theme-sidebar main-container flex-grow-1">
+                
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-4 gap-3">
                     <div>
-                        <h2 class="text-2xl font-bold mb-6 text-white">Prise de Presence Quotidienne</h2>
-                        
-                        <button class="bg-[#7C5CFC] hover:bg-[#6b4ce6] text-white px-6 py-2.5 rounded-lg flex items-center gap-3 shadow-lg transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <h2 class="text-white fw-bold mb-4">Prise de Présence Quotidienne</h2>
+                        <button class="btn bg-accent-purple text-white d-flex align-items-center gap-2 px-4 py-2 shadow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
                             </svg>
-                            <span class="font-medium">Enregistrer la presennce</span>
+                            <span class="fw-medium">Enregistrer la présence</span>
                         </button>
                     </div>
 
-                    <div class="relative w-80">
-                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="position-relative" style="width: 320px; max-width: 100%;">
+                        <span class="position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </span>
-                        <input type="text" 
-                               class="w-full bg-[#0B1221] text-white text-sm rounded-lg pl-10 pr-4 py-3 border border-gray-700 focus:outline-none focus:border-blue-500 placeholder-gray-500 shadow-inner" 
-                               placeholder="Rechercher...">
+                        <input type="text" class="form-control search-input ps-5 py-3 rounded-3" placeholder="Rechercher...">
                     </div>
                 </div>
 
-                <hr class="border-gray-600 mb-8 opacity-50">
+                <hr class="border-secondary opacity-50 mb-4">
 
-                <div class="mb-8">
-                    <label class="block text-gray-400 text-sm font-bold mb-2 uppercase tracking-wide">Selectionner la date</label>
-                    <div class="relative max-w-sm">
-                        <input type="date" 
-                               class="w-full bg-[#0B1221] text-white rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:border-blue-500 shadow-inner appearance-none"
-                               value="2023-10-24">
+                <div class="mb-5">
+                    <label class="d-block text-secondary small fw-bold mb-2 text-uppercase ls-1">Sélectionner la date</label>
+                    <div class="position-relative" style="max-width: 300px;">
+                        <input type="date" class="form-control search-input py-3 px-3 rounded-3" value="2023-10-24">
                     </div>
                 </div>
 
-                <div class="space-y-4">
+                <div class="d-flex flex-column gap-4">
 
-                    <div class="bg-[#0B1221] p-4 rounded-xl flex items-center justify-between border border-gray-800 shadow-lg">
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 bg-[#7C5CFC] rounded-2xl flex items-center justify-center text-white font-bold text-lg">
-                                MC
-                            </div>
+                    <div class="bg-theme-card p-3 rounded-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between border border-dark shadow">
+                        <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+                            <div class="avatar-box bg-accent-purple">MC</div>
                             <div>
-                                <h3 class="text-white font-bold text-lg">Mouad CHARADI</h3>
-                                <p class="text-gray-500 text-sm">Groupe 4 . ID: #001</p>
+                                <h3 class="text-white fs-5 fw-bold mb-0">Mouad CHARADI</h3>
+                                <p class="text-secondary small mb-0">Groupe 4 . ID: #001</p>
                             </div>
                         </div>
-
-                        <div class="bg-[#162447] rounded-lg p-1 flex">
-                            <button class="px-6 py-2 rounded bg-[#10B981] text-white font-medium shadow-sm">Present</button>
-                            <button class="px-6 py-2 rounded text-gray-400 hover:text-white transition-colors">Absent</button>
-                            <button class="px-6 py-2 rounded text-gray-400 hover:text-white transition-colors">Retard</button>
+                        <div class="status-toggle-group">
+                            <button class="btn-status active-green">Present</button>
+                            <button class="btn-status">Absent</button>
+                            <button class="btn-status">Retard</button>
                         </div>
                     </div>
 
-                    <div class="bg-[#0B1221] p-4 rounded-xl flex items-center justify-between border border-gray-800 shadow-lg">
-                        <div class="flex items-center gap-4">
-                            <div class="h-12 w-12 bg-[#10B981] rounded-2xl flex items-center justify-center text-white font-bold text-lg">
-                                FL
-                            </div>
-                            <div>
-                                <h3 class="text-white font-bold text-lg">Fathi laghres</h3>
-                                <p class="text-gray-500 text-sm">Groupe 4 . ID: #001</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-[#162447] rounded-lg p-1 flex">
-                            <button class="px-6 py-2 rounded text-gray-400 hover:text-white transition-colors">Present</button>
-                            <button class="px-6 py-2 rounded text-gray-400 hover:text-white transition-colors">Absent</button>
-                            <button class="px-6 py-2 rounded bg-[#F59E0B] text-white font-medium shadow-sm">Retard</button>
-                        </div>
-                    </div>
                     <div>
-                        <div class="bg-[#0B1221] mb-2 p-6 rounded-xl border-l-4 border-[#F59E0B] shadow-lg relative">
-                            <h4 class="text-[#F59E0B] font-medium mb-4">Informations du retard</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-theme-card p-3 rounded-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between border border-dark shadow mb-2">
+                            <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+                                <div class="avatar-box bg-accent-green">FL</div>
                                 <div>
-                                    <label class="block text-gray-500 text-xs font-bold mb-2 uppercase">HEURE D'ARRIVEE</label>
-                                    <input type="text" value="09 : 15 AM" class="w-full bg-[#10192D] text-white rounded px-4 py-3 border-none focus:ring-1 focus:ring-[#F59E0B] outline-none">
+                                    <h3 class="text-white fs-5 fw-bold mb-0">Fathi laghres</h3>
+                                    <p class="text-secondary small mb-0">Groupe 4 . ID: #001</p>
                                 </div>
-                                <div>
-                                    <label class="block text-gray-500 text-xs font-bold mb-2 uppercase">MOTIF DU RETARD</label>
-                                    <input type="text" value="Probleme de transport" class="w-full bg-[#10192D] text-white rounded px-4 py-3 border-none focus:ring-1 focus:ring-[#F59E0B] outline-none">
-                                </div>
+                            </div>
+                            <div class="status-toggle-group">
+                                <button class="btn-status">Present</button>
+                                <button class="btn-status">Absent</button>
+                                <button class="btn-status active-yellow">Retard</button>
                             </div>
                         </div>
 
-                        <div class="bg-[#0B1221] p-4 rounded-xl flex flex-col md:flex-row items-center justify-between border border-transparent shadow-lg">
-                            <div class="flex items-center gap-4 w-full md:w-auto mb-4 md:mb-0">
-                                <div class="h-14 w-14 bg-[#F59E0B] rounded-2xl flex items-center justify-center text-white font-bold text-xl">
-                                    FL
+                        <div class="bg-theme-card p-4 rounded-4 border-start border-4 border-accent-yellow shadow position-relative">
+                            <h4 class="text-accent-yellow fs-6 fw-medium mb-4">Informations du retard</h4>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="d-block text-secondary small fw-bold mb-2 text-uppercase">HEURE D'ARRIVEE</label>
+                                    <input type="text" value="09 : 15 AM" class="form-control bg-theme-input-inner text-white border-0 py-3 rounded">
                                 </div>
-                                <div>
-                                    <h3 class="text-white font-bold text-lg">Fathi laghres</h3>
-                                    <p class="text-gray-500 text-sm">Groupe 4 . ID: #001</p>
+                                <div class="col-md-6">
+                                    <label class="d-block text-secondary small fw-bold mb-2 text-uppercase">MOTIF DU RETARD</label>
+                                    <input type="text" value="Probleme de transport" class="form-control bg-theme-input-inner text-white border-0 py-3 rounded">
                                 </div>
                             </div>
-
-                            <div class="bg-[#162038] rounded-lg p-1.5 flex gap-1">
-                                <button class="px-8 py-2 rounded text-gray-400 hover:text-white transition-colors">Present</button>
-                                <button class="px-8 py-2 rounded text-gray-400 hover:text-white transition-colors">Absent</button>
-                                <button class="px-8 py-2 rounded bg-[#F59E0B] text-white font-medium shadow-sm transition-all">Retard</button>
+                        </div>
+                        
+                         <div class="bg-theme-card p-3 rounded-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between border border-transparent shadow mt-3">
+                            <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+                                <div class="avatar-box-lg bg-accent-yellow rounded-4">FL</div>
+                                <div>
+                                    <h3 class="text-white fs-5 fw-bold mb-0">Fathi laghres</h3>
+                                    <p class="text-secondary small mb-0">Groupe 4 . ID: #001</p>
+                                </div>
+                            </div>
+                            <div class="status-toggle-group">
+                                <button class="btn-status px-4">Present</button>
+                                <button class="btn-status px-4">Absent</button>
+                                <button class="btn-status px-4 active-yellow">Retard</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-[#0B1221] p-4 rounded-xl flex flex-col md:flex-row items-center justify-between border border-transparent shadow-lg">
-                        <div class="flex items-center gap-4 w-full md:w-auto mb-4 md:mb-0">
-                            <div class="h-14 w-14 bg-[#EF4444] rounded-2xl flex items-center justify-center text-white font-bold text-xl">
-                                AB
-                            </div>
+                    <div class="bg-theme-card p-3 rounded-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between border border-transparent shadow">
+                        <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+                            <div class="avatar-box-lg bg-accent-red rounded-4">AB</div>
                             <div>
-                                <h3 class="text-white font-bold text-lg">Student Name</h3>
-                                <p class="text-gray-500 text-sm">Groupe 4 . ID: #003</p>
+                                <h3 class="text-white fs-5 fw-bold mb-0">Student Name</h3>
+                                <p class="text-secondary small mb-0">Groupe 4 . ID: #003</p>
                             </div>
                         </div>
-
-                        <div class="bg-[#162038] rounded-lg p-1.5 flex gap-1">
-                            <button class="px-8 py-2 rounded text-gray-400 hover:text-white transition-colors">Present</button>
-                            <button class="px-8 py-2 rounded bg-[#EF4444] text-white font-medium shadow-sm transition-all">Absent</button>
-                            <button class="px-8 py-2 rounded text-gray-400 hover:text-white transition-colors">Retard</button>
+                        <div class="status-toggle-group">
+                            <button class="btn-status px-4">Present</button>
+                            <button class="btn-status px-4 active-red">Absent</button>
+                            <button class="btn-status px-4">Retard</button>
                         </div>
                     </div>
+
                 </div>
             </main>
-
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

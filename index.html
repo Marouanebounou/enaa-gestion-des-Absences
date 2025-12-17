@@ -1,79 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="flex min-h-screen">
-        <aside class="hidden lg:block w-64 bg-[#0B1736] text-white flex flex-col shrink-0">
-            <div class="h-20 flex items-center px-8">
-                <h1 class="text-4xl font-bold tracking-wide">Enaa</h1>
+    <div class="d-flex min-vh-100">
+        
+        <aside class="sidebar bg-theme-main text-white d-none d-lg-flex flex-column">
+            <div class="h-20 d-flex align-items-center px-4">
+                <h1 class="fs-2 fw-bold mb-0 text-nowrap">Enaa</h1>
             </div>
 
-            <nav class="flex-1 mt-6">
-                <ul class="space-y-2">
+            <nav class="flex-grow-1 mt-4">
+                <ul class="list-unstyled d-flex flex-column gap-2">
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-4 px-6 py-3 bg-[#081026] border-l-4 border-transparent hover:bg-[#162447] transition-colors relative">
-                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 hidden"></div>
-
-                            <img src="./imgs/icons8-dashboard-48.png" class="h-6 w-6" alt="" fill="currentColor" />
-                            <span class="text-lg font-medium">Tableua de bord</span>
+                        <a href="#" class="nav-link-custom active position-relative">
+                            <div class="position-absolute top-0 bottom-0 start-0 bg-primary d-none" style="width: 4px;"></div>
+                            <img src="./imgs/icons8-dashboard-48.png" width="24" height="24" alt="" />
+                            <span class="fs-5 fw-medium">Tableua de bord</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-4 px-6 py-3 hover:bg-[#162447] transition-colors text-gray-300 hover:text-white">
-                            <img src="./imgs/icons8-persons-30.png" class="w-6 h-6" alt="" />
-                            <span class="text-lg font-medium">Étudiants</span>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-persons-30.png" width="24" height="24" alt="" />
+                            <span class="fs-5 fw-medium">Étudiants</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-4 px-6 py-3 hover:bg-[#162447] transition-colors text-gray-300 hover:text-white">
-                            <img src="./imgs/icons8-person-100.png" class="w-6 h-6" alt="" />
-                            <span class="text-lg font-medium">Présence</span>
+                        <a href="/presont.html" class="nav-link-custom">
+                            <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="" />
+                            <span class="fs-5 fw-medium">Présence</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-4 px-6 py-3 hover:bg-[#162447] transition-colors text-gray-300 hover:text-white">
-                            <img src="./imgs/icons8-history-50.png" class="w-6 h-6" alt="" />
-                            <span class="text-lg font-medium">Historique</span>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-history-50.png" width="24" height="24" alt="" />
+                            <span class="fs-5 fw-medium">Historique</span>
                         </a>
                     </li>
                 </ul>
             </nav>
         </aside>
 
-        <div class="flex-1 flex flex-col">
-            <header class="h-20 bg-[#0B1736] flex items-center justify-end px-8 shadow-md">
-                <div class="flex items-center gap-3 text-white cursor-pointer hover:opacity-80">
-                    <img src="./imgs/icons8-person-100.png" class="w-6 h-6" alt="" />
-
-                    <span class="text-xl font-medium">Marouane</span>
+        <div class="flex-grow-1 d-flex flex-column">
+            <header class="h-20 bg-theme-main d-flex align-items-center justify-content-end px-4 shadow-sm">
+                <div class="d-flex align-items-center gap-3 text-white cursor-pointer opacity-hover">
+                    <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="" />
+                    <span class="fs-5 fw-medium">Marouane</span>
                 </div>
             </header>
-            <main class="p-8 m-10 rounded-3xl bg-[#0B1736]">
+            
+            <main class="p-4 p-lg-5 m-4 m-lg-5 bg-theme-main main-card text-white">
                 
             </main>
         </div>
     </div>
-</body>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

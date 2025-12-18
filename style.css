@@ -1,0 +1,94 @@
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #14325a;
+}
+
+.sidebar-header {
+    height: 80px;
+}
+.sidebar-link {
+    color: #adb5bd;
+    transition: background-color 0.3s;
+  
+}
+
+.sidebar-link:hover {
+    background-color: #162447;
+    color: #fff;
+}
+
+
+
+/* Header */
+.header {
+    height: 80px;
+    background-color: #14325a;
+}
+
+/* Stat cards */
+.stat-card {
+    background-color: #1a233b;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    min-width: 290px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+main{
+ background: #fff;
+
+}
+
+
+/* Icons */
+.icon-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-absent {
+    background-color: #ff000033;
+    color: #ff0000;
+}
+
+.icon-late {
+    background-color: #ff8c0033;
+    color: #ff8c00;
+}
+
+.icon-present {
+    background-color: #00ff0033;
+    color: #00ff00;
+}
+
+/* Orange custom */
+.bg-orangrad {
+    background-color: #ff9800;
+}
+
+.text-orangrad {
+    color: #ff9800;
+}
+
+.border-orangrad {
+    border-color: #ff9800;
+}
+

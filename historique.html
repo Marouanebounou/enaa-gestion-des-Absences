@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique </title>
+<link rel="stylesheet" href="historique.css">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="d-flex min-vh-100">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar d-none d-lg-flex flex-column text-white">
+        <div class="sidebar-header px-4 py-3">
+            <h1 class="fw-bold fs-2 m-0">Enaa</h1>
+        </div>
+
+        <nav class="flex-grow-1">
+            <ul class="nav flex-column gap-2">
+                <li class="nav-item">
+                    <a class="nav-link sidebar-link d-flex align-items-center gap-3 px-4 py-3" href="#">
+                       <!-- <img src="icons8-dashboard-48.png" width="24">-->
+                        <span>Tableau de bord</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link sidebar-link d-flex align-items-center gap-3 px-4 py-3" href="etudiants.html">
+                       <!-- <img src="icons8-persons-30.png" width="24">-->
+                        <span>Étudiants</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link sidebar-link d-flex align-items-center gap-3 px-4 py-3" href="presont.html">
+                       <!-- <img src="icons8-person-100.png" width="24">-->
+                        <span>Présence</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link sidebar-link d-flex align-items-center gap-3 px-4 py-3" href="historique.html">
+                        <!---<img src="icons8-history-50.png" width="24">-->
+                        <span>Historique</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <a href="#" class="sidebar-link text-danger text-decoration-none px-4 py-3 mt-auto">
+            <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
+        </a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-grow-1 d-flex flex-column">
+
+        <!-- HEADER -->
+        <header class="header d-flex justify-content-end px-4 py-3 text-white">
+            <i class="fa-solid fa-user me-2"></i>
+            <span class="fw-medium">Asma</span>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="p-4">
+
+            <!-- HISTORIQUE -->
+            <div class="card bg-dark text-light p-4 mb-4 position-relative">
+                <h1>Historique absences & retards</h1>
+
+                <div class="position-absolute top-0 end-0 m-4">
+                    <input type="date" id="date" class="form-control">
+                </div>
+
+                <hr>
+
+                <!-- DAY CARD -->
+                <div class="p-4 mb-3 bg-black rounded">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h5>Lundi 15 décembre 2025</h5>
+
+                    <div class="d-flex justify-content-between">
+                        <div>1 absent</div>
+                        <div>5 retards</div>
+                        <div>45 présents</div>
+                    </div>
+
+                    <button class="btn btn-primary mt-3">Voir détails</button>
+                </div>
+
+                <div class="p-4 mb-3 bg-black rounded">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h5>Lundi 15 décembre 2025</h5>
+
+                    <div class="d-flex justify-content-between">
+                        <div>1 absent</div>
+                        <div>5 retards</div>
+                        <div>45 présents</div>
+                    </div>
+
+                    <button class="btn btn-primary mt-3">Voir détails</button>
+                </div>
+            </div>
+
+            <!-- DETAILS -->
+            <div class="card bg-dark text-light p-4">
+               
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="historique.js"></script>
+
+</body>
+</html>

@@ -21,10 +21,19 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.main-dashboard{
+    margin-left: 250px;
+}
+
+
 @media (max-width: 991.98px) {
 
     .sidebar {
         left: -280px;
+    }
+
+    .main-dashboard{
+        margin-left: 0;
     }
 
     .sidebar.show {

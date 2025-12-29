@@ -60,7 +60,9 @@ body {
         display: block;
     }
 }
-
+header{
+    background-color: #14325a;   
+}
 .bg-theme-sidebar {
     background-color: #0b1736;
 }

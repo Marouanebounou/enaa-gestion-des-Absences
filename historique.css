@@ -4,8 +4,13 @@ aside{
 }
 header{
     background-color: #14325a;
-    padding: 20PX;
+    padding: 50px;
+   
 }
 .card{
     background: #14325a;
+}
+a{
+    color: #fff;
+    font-size: 1rem;
 }

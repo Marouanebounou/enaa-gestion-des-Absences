@@ -1,7 +1,6 @@
-const students = [
-  
-];
-
+const students =JSON.parse(localStorage.getItem("students"))||[] ;
+console.log(students);
+ 
 document.querySelector(".todayDate").value = new Date()
   .toISOString()
   .slice(0, 10);
@@ -84,9 +83,9 @@ allWrappers.forEach((wrapper) => {
         students.nom + " " + students.prenom ==
         wrapper.querySelector(".student-name").textContent
       ) {
-        students.status = "Retard";
+         students.status = "Retard";
+         students.retards = (students.retards || 0) + 1;
         students.retardTime = wrapper.querySelector(".retard-time").value;
-        students.retardReason = wrapper.querySelector(".retard-reason").value;
       }
     });
   });
@@ -102,6 +101,7 @@ allWrappers.forEach((wrapper) => {
         wrapper.querySelector(".student-name").textContent
       ) {
         students.status = "Present";
+         students.presence = (students.presence || 0) + 1; 
       }
     });
   });
@@ -120,6 +120,7 @@ allWrappers.forEach((wrapper) => {
         wrapper.querySelector(".student-name").textContent
       ) {
         students.status = "Absent";
+        students.absences = (students.absences || 0) + 1;
         students.absentReason = wrapper.querySelector(".absent-reason").value;
       }
     });
@@ -145,7 +146,7 @@ saveButton.addEventListener("click", () => {
       }
     });
   });
-  localStorage.setItem("myStudents", JSON.stringify(students));
+  localStorage.setItem("students", JSON.stringify(students));
   message.classList.remove("d-none");
 });
 

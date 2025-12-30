@@ -1,5 +1,3 @@
-
-
 const data=localStorage.getItem('students');
      const students =JSON.parse(data);
      console.log(students);

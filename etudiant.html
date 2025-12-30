@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Enaa – Gestion Étudiants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body style="margin:0;background:#fff;color:white;font-family:Arial,Helvetica,sans-serif;">
+
+  <div class="d-flex min-vh-100">
+
+
+    <aside class="sidebar bg-theme-sidebar text-white d-flex flex-column" id="sidebar">
+      <div class="h-20 d-flex align-items-center justify-content-between px-4 py-4 mb-3">
+        <h1 class="fs-2 fw-bold mb-0">Enaa</h1>
+        <button type="button" class="btn-close btn-close-white d-lg-none" id="closeSidebar"></button>
+      </div>
+
+      <nav class="flex-grow-1">
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li>
+            <a href="Tableubord.html" class="nav-link-custom active">
+              <img src="./imgs/icons8-dashboard-48.png" width="24" height="24" alt="">
+              <span class="fs-5 fw-medium">Tableau de bord</span>
+            </a>
+          </li>
+          <li>
+            <a href="etudiant.html" class="nav-link-custom">
+              <img src="./imgs/icons8-persons-30.png" width="24" height="24" alt="">
+              <span class="fs-5 fw-medium">Étudiants</span>
+            </a>
+          </li>
+          <li>
+            <a href="presont.html" class="nav-link-custom">
+              <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="">
+              <span class="fs-5 fw-medium">Présence</span>
+            </a>
+          </li>
+          <li>
+            <a href="historique.html" class="nav-link-custom">
+              <img src="./imgs/icons8-history-50.png" width="24" height="24" alt="">
+              <span class="fs-5 fw-medium">Historique</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="p-4 mt-auto">
+        <button href="#"
+          class="logout bg-theme-sidebar border-0 d-flex align-items-center gap-3 text-danger text-decoration-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          <span class="fs-5 fw-medium">Déconnexion</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="flex-grow-1">
+
+
+      <header class="bg-theme-sidebar d-flex w-100 align-items-center justify-content-between px-4 py-3 shadow-sm"
+        style="height: 80px;">
+
+        <button class="btn d-lg-none border-0 p-0 text-white" id="sidebarToggle">
+          <img src="./imgs/menu-bar.png" width="30" height="30" alt="Menu" style="filter: invert(1);">
+        </button>
+
+        <div class="d-none d-lg-block"></div>
+
+        <div class="d-flex align-items-center gap-3 text-white" role="button">
+          <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="">
+          <span class="fs-5 fw-medium">Marouane</span>
+        </div>
+      </header>
+      <main class="main-dashboard p-4">
+
+        <h1 class="text-secondary mb-4">Gestion des Étudiants</h1>
+
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <div class="p-4 rounded position-relative" style="background:#14325a;">
+              <h6 class="text-white">Total Étudiants</h6>
+              <h2 id="totalStudents">0</h2>
+              <div class="position-absolute top-0 end-0 m-3
+        d-flex align-items-center justify-content-center
+        rounded bg-success bg-opacity-25 text-success" style="width:44px;height:44px;">
+                <i class="bi bi-people fs-4"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="p-4 rounded position-relative" style="background:#14325a;">
+              <h6 class="text-white">Étudiants Actifs</h6>
+              <h2 id="activeStudents">0</h2>
+              <div class="position-absolute top-0 end-0 m-3
+        d-flex align-items-center justify-content-center
+        rounded bg-success bg-opacity-25 text-success" style="width:44px;height:44px;">
+                <i class="bi bi-person-check fs-4"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="p-4 rounded position-relative" style="background:#14325a;">
+              <h6 class="text-white">Étudiants Inactifs</h6>
+              <h2 id="inactiveStudents">0</h2>
+              <div class="position-absolute top-0 end-0 m-3
+        d-flex align-items-center justify-content-center
+        rounded bg-success bg-opacity-25 text-success" style="width:44px;height:44px;">
+                <i class="bi bi-person-x fs-4"></i>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <div class="d-flex justify-content-between mb-3">
+          <input id="searchInput" class="form-control w-50" style="background:#14325a;border:none;color:white;"
+            placeholder="🔍 Rechercher...">
+
+          <button id="addBtn" class="btn text-white fw-semibold" style="background:#14325a;border-radius:999px;">
+            <i class="bi bi-plus-lg"></i> Ajouter un étudiant
+          </button>
+        </div>
+
+
+        <div class="p-3 rounded" style="background:#14325a;">
+          <table class="table table-borderless mb-0 ">
+            <thead>
+              <tr>
+                <th>Étudiant</th>
+                <th>Email</th>
+                <th>Groupe</th>
+                <th>Statut</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentsTable" style="background-color: #14325a;"></tbody>
+          </table>
+        </div>
+        <div
+          class="d-none add-student position-fixed top-0 start-0 w-100 h-100 bg-light d-flex justify-content-center align-items-center"
+          style="z-index:1050;">
+          <div class="card w-50">
+            <div class="card-header bg-primary text-white">
+              <h4 class="mb-0">Ajouter un étudiant</h4>
+            </div>
+            <div class="card-body">
+              <form id="studentForm">
+
+                <div class="row mb-3">
+                  <div class="col">
+                    <label class="form-label">Nom</label>
+                    <input type="text" class="input-nom form-control">
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Prénom</label>
+                    <input type="text" class="input-prenom form-control">
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="input-email form-control">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Groupe</label>
+                  <input type="text" id="group" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Statut</label>
+                  <select class="input-status form-select">
+                    <option value="">Choisir...</option>
+                    <option value="actif">Actif</option>
+                    <option value="inactif">Inactif</option>
+                  </select>
+                </div>
+
+                <div class="d-flex justify-content-end gap-2">
+                  <button type="button" onclick="document.querySelector('.add-student').classList.add('d-none')"
+                    class="btn btn-secondary">
+                    Annuler
+                  </button>
+                  <button type="button" class="submit-btn btn btn-primary">
+                    Enregistrer
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+
+  <script src="sidebar.js"></script>
+  <script src="etudiant.js"></script>
+</body>
+
+</html>

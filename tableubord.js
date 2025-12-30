@@ -1,12 +1,15 @@
 
-//let students= [{"nom":"amine","prenom":"Bounou","retardTime":"5:50","absences":5,"retards":3,"presence":20,"group":"G1"},{"nom":"Ali","prenom":"Bounou","retardTime":"7:20","absences":4,"retards":6,"presence":18,"group":"G2"},{"nom":"Mohamed","prenom":"Bounou","retardTime":"2:45","absences":8,"retards":2,"presence":15,"group":"G3"},{"nom":"Youssef","prenom":"Bounou","retardTime":"8:50","absences":2,"retards":7,"presence":21,"group":"G1"},{"nom":"soufiane","prenom":"Bounou","retardTime":"4:00","absences":2,"retards":3,"presence":11,"group":"G2"}];
-
 const afficherStatus =()=>{
-
+  
         const data=localStorage.getItem('students');
         const students =JSON.parse(data);
          console.log(students);
-     
+
+students.forEach(student => {
+    student.absences = Number(student.absences) || 0;
+    student.retards  = Number(student.retards)  || 0;
+    student.presence = Number(student.presence) || 0;
+  });
        const totalJour=students.reduce((absence,student)=>
         absence+student.absences + student.retards + student.presence,0);
        // Taux Absence
@@ -14,29 +17,24 @@ const afficherStatus =()=>{
       const totalAbsences = students.reduce((absence, student) =>
       absence + student.absences, 0);
       console.log("Total des absences :", totalAbsences);
-      const absence=(totalAbsences / totalJour) * 100;
-      console.log(`taux absence: ${absence.toFixed(2)} %`);
-      TauxAbsence.innerHTML =`${absence.toFixed(2)} %`;
+      const absence = totalJour === 0 ? 0 : (totalAbsences / totalJour) * 100;
+     TauxAbsence.innerHTML = `${absence.toFixed(2)} %`;
+    
       // Taux retards
 
       let  tauxRetard =document.getElementById("Taux-retard");
-      let  totalRetard=students.reduce((retard,student)=>
-      retard + student.retards,0);
+      let totalRetard = students.reduce((acc, student) => acc + (student.retards || 0), 0);
       console.log("totale de retards: "+ totalRetard);
-
-       let Retard=(totalRetard / totalJour)* 100;
-       tauxRetard.innerHTML=`${Retard.toFixed(2)} %`
-       console.log("taux retard:"+Retard.toFixed(2));
+       let taux = totalJour && totalJour > 0 ? (totalRetard / totalJour) * 100 : 0;
+      tauxRetard.innerHTML = `${taux.toFixed(2)} %`;
 
         //taux presence
         let  tauxPresence=document.getElementById("Taux-presence");
         let  totalPresence=students.reduce((pre,student)=>
             pre + student.presence,0);
        
-      let presence=(totalPresence / totalJour )*100;
-        console.log("total de presence:"+ totalPresence);
-        console.log(`taux de presence : ${presence.toFixed(2)} %`)
-        tauxPresence.innerHTML=`${presence.toFixed(2)}`
+          let presence = totalJour === 0 ? 0 : (totalPresence / totalJour) * 100;
+  tauxPresence.innerHTML = `${presence.toFixed(2)} %`;
 
      //plus retarda
      const plusRetard =()=>{

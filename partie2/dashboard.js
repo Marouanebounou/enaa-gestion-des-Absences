@@ -1,6 +1,6 @@
 let students = [
   {
-    name: "amine",
+    nom: "amine",
     prenom: "Bounou",
     retardTime: "5:50",
     absences: 5,
@@ -9,7 +9,7 @@ let students = [
     group: "G1",
   },
   {
-    name: "Ali",
+    nom: "Ali",
     prenom: "Bounou",
     retardTime: "7:20",
     absences: 4,
@@ -18,7 +18,7 @@ let students = [
     group: "G2",
   },
   {
-    name: "Mohamed",
+    nom: "Mohamed",
     prenom: "Bounou",
     retardTime: "2:45",
     absences: 8,
@@ -27,7 +27,7 @@ let students = [
     group: "G3",
   },
   {
-    name: "Youssef",
+    nom: "Youssef",
     prenom: "Bounou",
     retardTime: "8:50",
     absences: 2,
@@ -36,7 +36,7 @@ let students = [
     group: "G1",
   },
   {
-    name: "soufiane",
+    nom: "soufiane",
     prenom: "Bounou",
     retardTime: "4:00",
     absences: 2,
@@ -50,12 +50,12 @@ function initDashboard() {
   const connectedName = localStorage.getItem("connectedUser");
 
   const user = students.find(
-    (s) => s.name.toLowerCase() === connectedName.toLowerCase()
+    (s) => s.nom.toLowerCase() === connectedName.toLowerCase()
   );
 
   if (user) {
     document.getElementById("userNameDisplay").textContent =
-      user.name + " " + user.prenom;
+      user.nom + " " + user.prenom;
     document.getElementById("userGroup").textContent = user.group;
     document.getElementById("statAbsences").textContent = user.absences;
     document.getElementById("statRetards").textContent = user.retards;

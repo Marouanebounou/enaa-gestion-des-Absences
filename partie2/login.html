@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENAA - Connexion Apprenant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        enaa: { dark: '#0f172a', blue: '#2563eb' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black h-screen flex items-center justify-center font-sans">
+
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-900/20 blur-[100px]"></div>
+        <div class="absolute bottom-[10%] right-[10%] w-[30%] h-[30%] rounded-full bg-blue-600/10 blur-[80px]"></div>
+    </div>
+
+    <div class="relative bg-gray-900 border border-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4">
+        
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold tracking-wider mb-2">
+                <span class="text-blue-600">ENAA</span>
+            </h1>
+        </div>
+
+        <form id="loginForm" class="space-y-6">
+            
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-300 mb-2">
+                    Identifiant
+                </label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-user text-gray-500"></i>
+                    </div>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        class="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors"
+                        placeholder="Nom.Prénom ou ID Apprenant"
+                        required
+                    >
+                </div>
+            </div>
+
+            <p id="errorMessage" class="hidden text-red-500 text-sm text-center bg-red-500/10 border border-red-500/20 rounded-lg py-2">
+                <i class="fas fa-circle-exclamation mr-2"></i> Identifiant incorrect.
+            </p>
+
+            <button 
+                type="submit" 
+                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500 transition-all transform hover:scale-[1.02]"
+            >
+                Se connecter
+            </button>
+        </form>
+    </div>
+
+    <script src="./login.js"></script>
+
+</body>
+</html>

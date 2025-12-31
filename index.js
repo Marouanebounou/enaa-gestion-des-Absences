@@ -1,6 +1,5 @@
-const students = [
-  
-];
+const students = JSON.parse(localStorage.getItem('students')) || []
+console.log(students);
 
 document.querySelector(".todayDate").value = new Date()
   .toISOString()
@@ -145,7 +144,7 @@ saveButton.addEventListener("click", () => {
       }
     });
   });
-  localStorage.setItem("myStudents", JSON.stringify(students));
+  localStorage.setItem("students", JSON.stringify(students));
   message.classList.remove("d-none");
 });
 

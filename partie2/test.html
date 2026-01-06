@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Charts JS</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    canvas {
+      max-width: 500px;
+      max-height: 300px;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Bar Chart</h2>
+<canvas id="barChart"></canvas>
+
+<h2>Pie Chart</h2>
+<canvas id="pieChart"></canvas>
+
+<script>
+  // Bar Chart
+  new Chart(document.getElementById('barChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green'],
+      datasets: [{
+        label: 'Votes',
+        data: [12, 19, 7, 5],
+        backgroundColor: ['red', 'blue', 'yellow', 'green']
+      }]
+    }
+  });
+
+  // Pie Chart
+  new Chart(document.getElementById('pieChart'), {
+    type: 'pie',
+    data: {
+      labels: ['Math', 'Science', 'English'],
+      datasets: [{
+        data: [40, 30, 30],
+        backgroundColor: ['orange', 'purple', 'cyan']
+      }]
+    }
+  });
+</script>
+
+</body>
+</html>

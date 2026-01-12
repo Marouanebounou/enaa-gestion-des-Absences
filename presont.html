@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enaa - Bootstrap Version</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="sidebar-overlay" id="overlay"></div>
+
+    <div class="d-flex min-vh-100">
+
+        <aside class="sidebar bg-theme-sidebar text-white d-flex flex-column" id="sidebar">
+            <div class="h-20 d-flex align-items-center justify-content-between px-4 py-4 mb-3">
+                <h1 class="fs-2 fw-bold mb-0">Enaa</h1>
+                <button type="button" class="btn-close btn-close-white d-lg-none" id="closeSidebar"></button>
+            </div>
+
+            <nav class="flex-grow-1">
+                <ul class="list-unstyled d-flex flex-column gap-2">
+                    <li>
+                        <a href="#" class="nav-link-custom active">
+                            <img src="./imgs/icons8-dashboard-48.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Tableau de bord</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-persons-30.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Étudiants</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Présence</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link-custom">
+                            <img src="./imgs/icons8-history-50.png" width="24" height="24" alt="">
+                            <span class="fs-5 fw-medium">Historique</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="p-4 mt-auto">
+                <button href="#" class="logout bg-theme-sidebar border-0 d-flex align-items-center gap-3 text-danger text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    <span class="fs-5 fw-medium">Déconnexion</span>
+                </button>
+            </div>
+        </aside>
+
+        <div class="flex-grow-1 d-flex flex-column content-wrapper">
+            
+            <header class="bg-theme-sidebar d-flex w-100 align-items-center justify-content-between px-4 py-3 shadow-sm" style="height: 80px;">
+                
+                <button class="btn d-lg-none border-0 p-0 text-white" id="sidebarToggle">
+                    <img src="./imgs/menu-bar.png" width="30" height="30" alt="Menu" style="filter: invert(1);"> 
+                </button>
+
+                <div class="d-none d-lg-block"></div>
+
+                <div class="d-flex align-items-center gap-3 text-white" role="button">
+                    <img src="./imgs/icons8-person-100.png" width="24" height="24" alt="">
+                    <span class="fs-5 fw-medium">Marouane</span>
+                </div>
+            </header>
+
+            <main class="m-4 m-lg-5 p-4 p-lg-5 bg-theme-sidebar main-container flex-grow-1">
+                
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-4 gap-3">
+                    <div>
+                        <h2 class="text-white fw-bold mb-4">Prise de Présence Quotidienne</h2>
+                        <button class="btn save-btn bg-accent-purple text-white d-flex align-items-center gap-2 px-4 py-2 shadow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+                            </svg>
+                            <span class="fw-medium">Enregistrer la présence</span>
+                        </button>
+                        <h3 class="success-msg d-none text-accent-green mt-4">Enregistrer avec success</h3>
+                    </div>
+
+                    <div class="position-relative" style="width: 320px; max-width: 100%;">
+                        <span class="position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control search-input ps-5 py-3 rounded-3" placeholder="Rechercher...">
+                    </div>
+                </div>
+
+                <hr class="border-secondary opacity-50 mb-4">
+
+                <div class="mb-5">
+                    <label class="d-block text-secondary small fw-bold mb-2 text-uppercase ls-1">Sélectionner la date</label>
+                    <div class="position-relative" style="max-width: 300px;">
+                        <input type="date" class="todayDate form-control search-input py-3 px-3 rounded-3" value="">
+                    </div>
+                </div>
+
+                <div id="student-container" class=" d-flex flex-column gap-4">
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

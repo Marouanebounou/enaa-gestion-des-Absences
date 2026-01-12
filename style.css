@@ -1,4 +1,269 @@
-/* Sidebar */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f3f4f6;
+}
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.content-wrapper {
+    margin-left: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-dashboard{
+    margin-left: 250px;
+}
+
+
+@media (max-width: 991.98px) {
+
+    .sidebar {
+        left: -280px;
+    }
+
+    .main-dashboard{
+        margin-left: 0;
+    }
+
+    .sidebar.show {
+        left: 0;
+        display: flex !important;
+    }
+
+    .content-wrapper {
+        margin-left: 0;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        display: none;
+    }
+
+    .sidebar-overlay.show {
+        display: block;
+    }
+}
+
+.bg-theme-sidebar {
+    background-color: #0b1736;
+}
+
+.bg-theme-card {
+    background-color: #0b1221;
+}
+
+.bg-theme-hover:hover {
+    background-color: #162447;
+}
+
+.bg-theme-input-wrap {
+    background-color: #162447;
+}
+
+.bg-theme-input {
+    background-color: #0b1221;
+}
+
+.bg-theme-input-inner {
+    background-color: #10192d;
+}
+
+.bg-accent-purple {
+    background-color: #7c5cfc;
+}
+
+.bg-accent-purple:hover {
+    background-color: #6b4ce6;
+}
+
+.bg-accent-green {
+    background-color: #10b981;
+}
+
+.bg-accent-yellow {
+    background-color: #f59e0b;
+}
+
+.bg-accent-red {
+    background-color: #ef4444;
+}
+
+.text-accent-yellow {
+    color: #f59e0b;
+}
+
+.text-accent-red {
+    color: red;
+}
+
+.text-accent-green {
+    color: rgb(111, 255, 0);
+}
+
+.border-accent-yellow {
+    border-color: #f59e0b !important;
+}
+
+.border-accent-red {
+    border-color: #f50b0b !important;
+}
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.nav-link-custom {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    color: #d1d5db;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.nav-link-custom:hover {
+    color: white;
+    background-color: #162447;
+}
+
+.nav-link-custom.active {
+    background-color: #081026;
+}
+
+.main-container {
+    border-radius: 1.5rem;
+}
+
+.search-input {
+    background-color: #0b1221;
+    border: 1px solid #374151;
+    color: white;
+}
+
+.search-input::placeholder {
+    color: #6b7280;
+}
+
+.search-input:focus {
+    background-color: #0b1221;
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: none;
+}
+
+.status-toggle-group {
+    background-color: #162447;
+    border-radius: 0.5rem;
+    padding: 0.35rem;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.btn-status {
+    border: none;
+    background: transparent;
+    color: #9ca3af;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.btn-status:hover {
+    color: white;
+}
+
+.btn-status.active-green {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-status.active-yellow {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.btn-status.active-red {
+    background-color: #ef4444;
+    color: white;
+}
+
+.avatar-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.avatar-box-lg {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.25rem;
+}
+.bg-theme-main {
+    background-color: #0B1736;
+}
+
+.bg-theme-darker {
+    background-color: #081026;
+}
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.h-20 {
+    height: 5rem;
+}
+
+.nav-link-custom {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    color: #d1d5db;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.nav-link-custom:hover {
+    background-color: #162447;
+    color: white;
+}
+
+.nav-link-custom.active {
+    background-color: #081026;
+}
+
+.main-card {
+    border-radius: 1.5rem;
+}/* Sidebar */
 .sidebar {
     width: 250px;
     background-color: #14325a;
